@@ -16,6 +16,25 @@ const getAccentColor = (accent) => {
   return colors[accent] || colors.blue;
 };
 
+const handleLabelBaseStyles = {
+  position: 'absolute',
+  transform: 'translateY(-50%)',
+  maxWidth: 120,
+  padding: '3px 7px',
+  borderRadius: 999,
+  background: '#f8fafc',
+  border: '1px solid #cbd5e1',
+  color: '#475569',
+  fontSize: 10,
+  fontWeight: 700,
+  lineHeight: 1.2,
+  whiteSpace: 'nowrap',
+  overflow: 'hidden',
+  textOverflow: 'ellipsis',
+  pointerEvents: 'none',
+  boxShadow: '0 8px 18px rgba(15, 23, 42, 0.08)',
+};
+
 export const BaseNode = ({
   id,
   title,
@@ -66,22 +85,10 @@ export const BaseNode = ({
             {input.label && (
               <span
                 style={{
-                  position: 'absolute',
+                  ...handleLabelBaseStyles,
                   top,
-                  left: 12,
-                  transform: 'translateY(-50%)',
-                  maxWidth: 92,
-                  padding: '2px 6px',
-                  borderRadius: 999,
-                  background: '#f8fafc',
-                  border: '1px solid #e2e8f0',
-                  color: '#475569',
-                  fontSize: 10,
-                  lineHeight: 1.2,
-                  whiteSpace: 'nowrap',
-                  overflow: 'hidden',
-                  textOverflow: 'ellipsis',
-                  pointerEvents: 'none',
+                  right: 'calc(100% + 10px)',
+                  textAlign: 'right',
                 }}
                 title={input.label}
               >
@@ -176,23 +183,9 @@ export const BaseNode = ({
             {output.label && (
               <span
                 style={{
-                  position: 'absolute',
+                  ...handleLabelBaseStyles,
                   top,
-                  right: 12,
-                  transform: 'translateY(-50%)',
-                  maxWidth: 92,
-                  padding: '2px 6px',
-                  borderRadius: 999,
-                  background: '#f8fafc',
-                  border: '1px solid #e2e8f0',
-                  color: '#475569',
-                  fontSize: 10,
-                  lineHeight: 1.2,
-                  whiteSpace: 'nowrap',
-                  overflow: 'hidden',
-                  textOverflow: 'ellipsis',
-                  pointerEvents: 'none',
-                  textAlign: 'right',
+                  left: 'calc(100% + 10px)',
                 }}
                 title={output.label}
               >
